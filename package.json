@@ -5,6 +5,7 @@
   "type": "commonjs",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "docker": "^1.0.0",
@@ -19,8 +20,8 @@
   },
   "scripts": {
     "start": "env-cmd -f ./environments/.env.development nodemon index",
-    "migrate": "knex migrate:latest",
-    "unmigrate": "knex migrate:rollback",
-    "seed": "knex seed:run "
+    "migrate": "env-cmd -f ./environments/.env.development knex migrate:latest",
+    "unmigrate": "env-cmd -f ./environments/.env.development knex migrate:rollback",
+    "seed": "env-cmd -f ./environments/.env.development knex seed:run "
   }
 }

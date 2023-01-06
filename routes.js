@@ -1,7 +1,10 @@
 const express = require('express');
-const SessionController = require('./controllers/SessionController');
+const UserController = require('./controllers/UserController');
+const { verifyJWT } = require('./middleware/verifyJWT');
 const routes = express.Router();
 
-routes.post('/login', SessionController.login);
+routes.post('/login', UserController.login);
+routes.get('/users', verifyJWT, UserController.listAll);
+routes.post('/users/create', UserController.create);
 
 module.exports = routes;
