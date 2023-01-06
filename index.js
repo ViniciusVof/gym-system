@@ -1,10 +1,12 @@
-import express, { json, urlencoded } from 'express';
-import cors from 'cors';
-import routes from './routes.js';
+const express = require('express');
+const cors = require('cors');
+const routes = require('./routes.js');
 const app = express();
 
+require('dotenv').config()
+
 app.use(cors());
-app.use(json());
+app.use(express.json());
 app.use(routes);
 
-app.listen(port);
+app.listen(process.env.PORT);

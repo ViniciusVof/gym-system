@@ -6,7 +6,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://coaixswd:n1HRqJ-bEOsUVoRdj6_Y4T5SW82I_olv@kesavan.db.elephantsql.com/coaixswd',
+    connection: process.env.DB_URL,
     migrations: {
       directory: './data/migrations',
     },
@@ -15,7 +15,7 @@ module.exports = {
 
   staging: {
     client: 'pg',
-    connection: 'postgres://coaixswd:n1HRqJ-bEOsUVoRdj6_Y4T5SW82I_olv@kesavan.db.elephantsql.com/coaixswd',
+    connection: process.env.DB_URL,
     migrations: {
       directory: './data/migrations',
     },
@@ -24,7 +24,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: 'postgres://coaixswd:n1HRqJ-bEOsUVoRdj6_Y4T5SW82I_olv@kesavan.db.elephantsql.com/coaixswd',
+    connection: process.env.DB_URL,
     migrations: {
       directory: './data/migrations',
     },

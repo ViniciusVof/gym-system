@@ -1,4 +1,7 @@
-import { Router } from 'express';
-const routes = Router();
+const express = require('express');
+const SessionController = require('./controllers/SessionController');
+const routes = express.Router();
 
-routes.get('/login');
+routes.post('/login', SessionController.login);
+
+module.exports = routes;
