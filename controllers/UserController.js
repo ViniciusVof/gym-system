@@ -1,8 +1,6 @@
-const { response } = require('express');
 const connection = require('../data/config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const e = require('express');
 const saltRounds = 10;
 module.exports = {
     async listOne(req, res) {
