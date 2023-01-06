@@ -1,14 +1,10 @@
-const http = require('http');
-const express = require('express');
+import express, { json, urlencoded } from 'express';
+import cors from 'cors';
+import routes from './routes.js';
 const app = express();
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.use(cors());
+app.use(json());
+app.use(routes);
 
-app.get('/', (req, res, next) => {
-    res.json({message: "hello word"})
-});
-
-const server = http.createServer(app);
-server.listen(3000);
-console.log("Uhuuul")
+app.listen(port);
