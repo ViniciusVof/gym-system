@@ -20,7 +20,7 @@ module.exports = {
             .select('*')
 
             if (!users) {
-                return res.status(400).json({error: 'Nenhum usuário encontrado'});
+                return res.status(400).json({error: 'Algo deu errado na hora da listagem'});
             }
             return res.status(200).json(users);
     },
